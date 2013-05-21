@@ -1,28 +1,134 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TwisTwas</title>
+    <title>Chris Sita - Twittler</title>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <script src="main.js"></script>
+    
+
+    <style>
+
+#main-well{
+  margin-bottom: 153px;
+}
+
+#container{
+  background: rgb(216, 227, 255);
+  margin-bottom: 20px;
+  width: 730px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+section#controls{
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:100px;
+    width:100%;
+    background:#999;
+    padding: 20px 10px;
+}
+
+ #moretweets {
+        
+        -moz-box-shadow:inset 0px 1px 0px 0px #29bbff;
+        -webkit-box-shadow:inset 0px 1px 0px 0px #29bbff;
+        box-shadow:inset 0px 1px 0px 0px #29bbff;
+        
+        background-color:#2dabf9;
+        
+        -moz-border-radius:5px;
+        -webkit-border-radius:5px;
+        border-radius:5px;
+        
+        border:2px solid #0b0e07;
+        
+        display:inline-block;
+        color:#ffffff;
+        font-family:arial;
+        font-size:23px;
+        font-weight:normal;
+        padding:13px 24px;
+        text-decoration:none;
+        
+        text-shadow:0px 1px 0px #263666;
+        
+    }
+    #moretweets:hover {
+        
+        background-color:#0688fa;
+    }
+    #moretweets:active {
+        position:relative;
+        top:1px;
+    }
+
+    .tweets_on_page{
+      display: inline;
+      font-size: 35px;
+      font-family: Arial;
+      color: white;
+    }
+
+    #profile{
+      float: right;
+      margin-right: 20px;
+      border: solid 5px #ffffff;
+      border: solid white;
+    }
+
+    #userimg{
+      border: solid white;
+
+    }
+    #postuser{
+      display: inline-block;
+      position: relative;
+      top: -126px;
+      left: 10px;
+      font-size: 35px;
+      text-decoration: underline;
+    }
+
+    #postmessage {
+      position: relative;
+      top: -120px;
+      left: 170px;
+      font-size: 20px;
+      width: 530px;
+    }
+
+    #posttime{ 
+      position: relative;
+      left: 170px;
+      top: -52px;
+      font-style: italic;
+}
+    }
+
+
+
+    </style>
   </head>
   <body>
-    <script>
+    <section id ="main-well">
 
-      $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
+      <section id="container"></section>
 
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
-          index -= 1;
-        }
+      <section id="controls">
+        <div id="profile"><img src="me.jpeg"></div>
+        <div id="button">
+        <button id="moretweets">Load +5 tweets</button>
+        </div>
+        <div class="tweets_on_page"></div>
+      </section>
+  
+   </section>
 
-      });
-
-    </script>
   </body>
+
+
 </html>
